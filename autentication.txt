@@ -1,0 +1,29 @@
+
+//Autenticação com firebase
+1º - Campos Input nome e senha salvos no redux LoginUser
+2º - Chamada da função login com validação
+   //Passando o redux
+   if true -
+   //Criar action e dar dispatch em uma res api 
+   firebase.auth().signInWithEmailAndPassword(email, password).then(() => Actions.home()).catch(function(error) {
+ 	// Handle Errors here.
+ 	//Verificar o código e tratar o erro
+        var errorCode = error.code;
+	       	
+        var errorMessage = error.message;
+  	// ...
+	});
+
+   else Alert.alerta('Atenção!', 'Preencha os campos corretamente para efetuar o login);
+
+https://firebase.google.com/docs/auth/web/password-auth?hl=pt-br
+https://firebase.google.com/docs/auth/web/manage-users?hl=pt-br
+
+
+//Na Home
+1º - Receber dados do usuário 
+  use var user = firebase.auth().currentUser;
+ console.log(user);
+
+//Analisar como integrar calendar e firebase para gerar o calendário
+https://medium.com/google-cloud/using-google-apis-with-firebase-auth-and-firebase-ui-on-the-web-46e6189cf571

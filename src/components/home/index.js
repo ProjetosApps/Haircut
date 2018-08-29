@@ -21,9 +21,8 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    // axios.get('Http://www.igtest.tk')
-    // .then(response => console.log(response))
-    // .catch(() => console.log('Errooooo'));
+
+    
   }
 
   render() {

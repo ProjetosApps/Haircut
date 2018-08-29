@@ -4,7 +4,6 @@ const INITIAL_STATE = {
     senha: '',
 }
 
-export default (state = INITIAL_STATE, action) => {
-    console.log('ó aqui a action', action);
-    return state;
+export default (state = INITIAL_STATE, action) => { 
+    return {...state, nome: action.payload};
 }

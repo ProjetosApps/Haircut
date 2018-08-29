@@ -9,7 +9,6 @@ import reducers from './reducers';
 const store = createStore(reducers);
 
 export default props => {
-    
     return(
       <Provider store={store}>
         <Routes />
