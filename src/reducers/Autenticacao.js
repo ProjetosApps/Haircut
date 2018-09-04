@@ -5,5 +5,12 @@ const INITIAL_STATE = {
 }
 
 export default (state = INITIAL_STATE, action) => { 
-    return {...state, nome: action.payload};
+    switch (action.type) {
+        case "MODIFICA_NOME":
+        return {...state, nome: action.payload};
+    switch (action.type) {
+        case "MODIFICA_SENHA":
+        return {...state, senha: action.payload};
+
+    }
 }

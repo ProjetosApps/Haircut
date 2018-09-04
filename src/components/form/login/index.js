@@ -10,14 +10,18 @@ import { modifica_dados } from '../../../actions/ActionAutenticacao';
 class Login extends Component {
    constructor(props) {
      super(props);
-     console.log('prrrropprorp', props);
      
    }
 
   componentDidMount() {
-    axios.get('http://www.igtest.tk')
-    .then(response => this.setState({contato: response.data}))
-    .catch(() => console.log('Errooooo'));
+  
+  }
+
+  _signin() {
+    if(this.props.email != '' && this.props.senha != ''){
+
+    }
+      
   }
 
    render() {
@@ -59,6 +63,7 @@ class Login extends Component {
              <View style={styles.itemPassword}>
                <Image source={require('../../../assets/icons/locked.png')} style={styles.iconLock}/>
                <TextInput placeholder={'Senha'}
+                          onChangeText={(text) => this.props.modifica_dados(text, "") }
                           underlineColorAndroid={'transparent'}
                           style={styles.textInput} />
              </View>
@@ -93,7 +98,6 @@ class Login extends Component {
              <View style={styles.containerButtons}>
                
                <TouchableNativeFeedback onPressOut={() => false} 
-                                         background={TouchableNativeFeedback.SelectableBackground()}
                                          useForeground>
                  <View style={[styles.btnStyle, styles.btnEntarFacebook]}>
                    <Image source={ require('../../../assets/icons/face-logo.png') } style={styles.logoFace}/>
@@ -101,8 +105,7 @@ class Login extends Component {
                  </View>
                </TouchableNativeFeedback>
                
-               <TouchableNativeFeedback onPressOut={() => false} 
-                                         background={TouchableNativeFeedback.SelectableBackground()}
+               <TouchableNativeFeedback onPressOut={() => this._signin()}
                                          useForeground>
                  <View style={[styles.btnStyle, styles.btnCreate]}>
                    <Image source={ require('../../../assets/icons/signin.png') } style={styles.logoFace}/>
@@ -125,11 +128,10 @@ class Login extends Component {
 }
 
   const mapStateToProps = state => {
-    console.log('modificando dados', modifica_dados);
+    const { email, senha } = state.Autenticacao;
     return (
         {
-            email: state.Autenticacao.email,
-            senha: state.Autenticacao.senha
+            email, senha,
         }
     );
   }
