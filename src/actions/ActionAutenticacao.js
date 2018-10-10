@@ -1,4 +1,4 @@
-export const modifica_dados = (action, payload) => {
+export const modifica_dados = ( payload, type) => {
     return ({
         type,
         payload,

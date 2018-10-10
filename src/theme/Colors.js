@@ -5,6 +5,7 @@ const colors = {
     azulFace: "#29487d",
     ouroEscuro: "#c4a95e",
     fosco: 'rgba(1,1,1, .8)',
+    place: 'rgb(140,140,140)',
     brancoFosco: 'rgba( 255, 255, 255, .1)',
 };
 

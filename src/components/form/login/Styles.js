@@ -5,7 +5,8 @@ import colors from '../../../theme/Colors';
 const styles = StyleSheet.create({
     containerImage: {
         flex: 1,
-        paddingVertical: 40,
+        paddingTop: 40,
+        paddingBottom: 25,
         paddingHorizontal: 15,
         height: Dimensions.get('window').height,
     },
@@ -91,12 +92,12 @@ const styles = StyleSheet.create({
     },
 
     containerLogin: {
-        height: 90,
+        height: 100,
     
     },
 
     btnStyle: {
-        flex: 1,
+        // flex: 1,
         height: 45,
         elevation: 5,
         borderRadius: 200,
@@ -113,9 +114,8 @@ const styles = StyleSheet.create({
     
     btnEntar: {
         marginTop: 10,
-        marginLeft: 15,
-        marginRight: 15,
-        marginBottom: 10,
+        marginBottom: 20,
+        marginHorizontal: 20,
         backgroundColor: colors.ouro,
     },
 
@@ -129,10 +129,12 @@ const styles = StyleSheet.create({
 
     containerCreate: {
         flex: 1,
+        paddingHorizontal: 5,
+        paddingBottom: 20,
     },
 
     separator: {
-        marginTop: 25,
+        marginTop: 20,
         alignItems: 'center',
         flexDirection: 'row',
     },
@@ -160,6 +162,7 @@ const styles = StyleSheet.create({
     },
 
     btnEntarFacebook: {
+        width: "46%",
         marginRight: 10,
         flexDirection: 'row',
         backgroundColor: colors.azulFace,
@@ -173,6 +176,7 @@ const styles = StyleSheet.create({
     },
 
     btnCreate: {
+        width: "46%",
         marginLeft: 10,
         flexDirection: 'row',
         backgroundColor: colors.ouroEscuro

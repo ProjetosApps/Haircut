@@ -18,8 +18,8 @@ export default props => {
         
         <Scene key="Drawer" drawer contentComponent={Drawer} hideNavBar>
     
-          <Scene key="Historico" component={Historico} hideNavBar />
           <Scene key="Home" component={Home} hideNavBar />
+          <Scene key="Historico" component={Historico} hideNavBar />
           <Scene key="Agendar" component={Agendar} hideNavBar />
     
         </Scene>

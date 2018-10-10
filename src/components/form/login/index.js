@@ -5,6 +5,7 @@ import { Actions } from 'react-native-router-flux';
 import { Image, View, TextInput, Text, ScrollView, ImageBackground, StatusBar, TouchableNativeFeedback,  } from 'react-native';
 
 import styles from './Styles';
+import colors from '../../../theme/Colors';
 import { modifica_dados } from '../../../actions/ActionAutenticacao';
 
 class Login extends Component {
@@ -19,9 +20,12 @@ class Login extends Component {
 
   _signin() {
     if(this.props.email != '' && this.props.senha != ''){
-
+      this.props.modifica_dados("", "MODIFICA_SENHA");
+      this.props.modifica_dados("", "MODIFICA_EMAIL");
+      return Actions.Signin();
     }
-      
+    
+     return Actions.Signin();
   }
 
    render() {
@@ -55,7 +59,8 @@ class Login extends Component {
 
              <View style={styles.item}>
                <Image source={require('../../../assets/icons/avatar.png')} style={styles.icon}/>
-               <TextInput placeholder={'Usuário'}
+               <TextInput placeholder={'E-mail'}
+               placeholderTextColor={colors.place}
                           underlineColorAndroid={'transparent'}
                           style={styles.textInput} />
              </View>
@@ -63,7 +68,8 @@ class Login extends Component {
              <View style={styles.itemPassword}>
                <Image source={require('../../../assets/icons/locked.png')} style={styles.iconLock}/>
                <TextInput placeholder={'Senha'}
-                          onChangeText={(text) => this.props.modifica_dados(text, "") }
+                          placeholderTextColor={colors.place}
+                          onChangeText={(text) => this.props.modifica_dados(text, "MODIFICA_SENHA") }
                           underlineColorAndroid={'transparent'}
                           style={styles.textInput} />
              </View>
@@ -74,7 +80,7 @@ class Login extends Component {
           {/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */}
            <View style={styles.containerLogin}>
           
-             <TouchableNativeFeedback onPressOut={() =>this.props.modifica_dados()} 
+             <TouchableNativeFeedback onPressOut={() => Actions.Drawer()} 
                                       background={TouchableNativeFeedback.SelectableBackground()}
                                       useForeground>
                <View style={[styles.btnStyle, styles.btnEntar]}>
@@ -91,7 +97,7 @@ class Login extends Component {
              
              <View style={styles.separator}>
                <View style={styles.line}/>
-               <Text style={styles.textSeparator}>Ou</Text>
+                 <Text style={styles.textSeparator}>Ou</Text>
                <View style={styles.line}/>
              </View>
            
@@ -127,7 +133,7 @@ class Login extends Component {
   }
 }
 
-  const mapStateToProps = state => {
+const mapStateToProps = state => {
     const { email, senha } = state.Autenticacao;
     return (
         {
