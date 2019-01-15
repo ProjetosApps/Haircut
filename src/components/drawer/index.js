@@ -67,7 +67,7 @@ class Drawer extends Component {
             <View style={styles.separador}/>
 
             {/* Botão Configurações ================================================ */}
-            <TouchableNativeFeedback onPressOut={ () => false} background={TouchableNativeFeedback.SelectableBackground(colors.branco)} > 
+            <TouchableNativeFeedback onPressOut={ () => Actions.Configuracoes()} background={TouchableNativeFeedback.SelectableBackground(colors.branco)} > 
               <View style={styles.containerBtn}>
                 <Image source={ require('../../assets/icons/gear.png')} style={styles.iconBtn}/>
                 <Text style={styles.textBtn}>Configurações</Text>

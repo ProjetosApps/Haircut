@@ -1,15 +1,13 @@
 import React,{ Component, } from 'react';
-import { View, Dimensions, TouchableNativeFeedback} from 'react-native';
+import { View } from 'react-native';
+
 import { connect } from 'react-redux';
 import { Actions } from 'react-native-router-flux';
 import { modifica_dados } from '../../actions/ActionAutenticacao';
-// import axios from 'axios';
 
-// import Accordion from "react-native-accordion";
-
-// import CollapseView from 'react-native-collapse-view';
 import styles from './Styles';
 import Headder from '../../theme/headder';
+
 import Autentic from '../../reducers/Autenticacao';
 
 class Home extends Component {
@@ -18,17 +16,12 @@ class Home extends Component {
     this.state = { colapse: null };
   }
 
-  componentDidMount() {
-
-    
-  }
 
   render() {
-    console.log(this.props.colapse)
     return(
       <View style={styles.container}>
         <Headder/>
-        <View style={styles.body} >
+        <View style={styles.body}>
         
         {/* <CollapseView colapse={this.state.colapse} renderView={() => <View style={{height: 40, width: '100%', backgroundColor: 'red'}}/>}
                       renderCollapseView={() => <View style={{height: 80, width: '100%', alignItems:'center', justifyContent: 'center', backgroundColor: 'blue'}}>
@@ -47,7 +40,7 @@ class Home extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state.Autenticacao);
+
   const { email, senha , colapse, change} = state.Autenticacao;
 
   return ({ email, senha, colapse, change });

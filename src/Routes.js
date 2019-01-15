@@ -7,6 +7,7 @@ import Agendar from './components/agendar';
 import Login from './components/form/login';
 import Signin from './components/form/signin';
 import Historico from './components/historico';
+import Configuracoes from './components/configuracoes';
 
 export default props => {
   return(
@@ -18,6 +19,7 @@ export default props => {
         
         <Scene key="Drawer" drawer contentComponent={Drawer} hideNavBar>
     
+          <Scene key="Configuracoes" component={Configuracoes} hideNavBar />
           <Scene key="Home" component={Home} hideNavBar />
           <Scene key="Historico" component={Historico} hideNavBar />
           <Scene key="Agendar" component={Agendar} hideNavBar />
